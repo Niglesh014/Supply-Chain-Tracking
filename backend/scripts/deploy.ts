@@ -31,6 +31,11 @@ async function main() {
   const deploymentsPath = path.join(__dirname, '../../client/src/deployments.json')
   const deployments = JSON.parse(fs.readFileSync(deploymentsPath, 'utf8'))
 
+  // ✅ FIX (minimal & required)
+  if (!deployments.networks) {
+    deployments.networks = {}
+  }
+
   if (!deployments.networks[chainId]) {
     deployments.networks[chainId] = {}
   }
@@ -49,4 +54,3 @@ main()
     console.error(error)
     process.exit(1)
   })
-

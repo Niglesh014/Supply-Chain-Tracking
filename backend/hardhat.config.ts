@@ -28,12 +28,16 @@ const config: HardhatUserConfig = {
     ganache: {
       url: 'http://127.0.0.1:7545',
       chainId: 1337, // Default Ganache chainId
+    
       // Ganache provides pre-funded accounts, so we don't need to specify accounts here
       // Make sure Ganache is running and has accounts with funds
     },
     ganache5777: {
       url: 'http://127.0.0.1:7545',
-      chainId: 5777, // Alternative Ganache chainId
+      chainId: 5777,
+       accounts: {
+    mnemonic: "language exclude much theory boost vibrant remain festival diet clip kind donkey"
+  } // Alternative Ganache chainId
       // For Ganache instances using chainId 5777
     },
   },
